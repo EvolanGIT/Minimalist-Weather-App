@@ -1,0 +1,33 @@
+:root {
+    --monotone: rgb(104, 102, 97);
+    --linear: rgb(129, 110, 58);
+    --ivory:  rgb(212, 202, 163); 
+}
+
+body {
+    background-color: var(--monotone);
+    
+}
+
+.navbar {
+    background-color: var(--linear);
+}
+
+.btn {
+    background-color: var(--monotone);
+}
+
+.card {
+    background-color: var(--linear);
+    
+}
+
+.card-text {
+    margin: 25px 0 20px 0;
+}
+
+footer img {
+    position:fixed;
+    bottom:0;
+    right:0;
+}
