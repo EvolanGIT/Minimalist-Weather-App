@@ -10,86 +10,37 @@
     <title>Weather Forecast - Yon B.</title>
 </head>
 <body>
+<main>
     <nav class="navbar navbar-expand-lg p-3">
         <h1>Weather Forecast</h1>
         <form class="d-flex ms-auto">
             <a class="nav-link fs-3 px-2 me-2 border border-dark rounded-3 dropdown-toggle" href="#" id="inputSave" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Recent Searches
             </a>
-            <input class="form-control form-control-lg fw-bolder" type="search" placeholder="Search by City" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control form-control-lg fw-bolder" id="inputName" type="search" placeholder="Search by City" aria-label="Search">
+            <button id="pressSearch" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
     <header>
-        <h1 class="display-2 m-4 pb-3 text-center text-decoration-underline ">Current city's name goes here</h1>
-        <h3 class="display-4 m-2 pb-5 text-center"> Current city's time </h3>
+        <h1 id="cityName" class="display-2 m-4 pb-1 text-center text-decoration-underline">Search for a city to Begin</h1>
     </header>
-    <article class="container">
-        <section class="row justify-content-between text-center">
-            <div class="card" style="width: 15rem;">
-                <div class="card text-bg-dark mb-2" style="max-width: 15rem;">
-                    <div class="card-header">Day of the week</div>
-                    <div class="card-body ">
-                    <img src="#">
-                    <p class="card-text">temp</p>
-                    <p class="card-text">wind</p>
-                    <p class="card-text">humidity</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem;">
-                <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
-                    <div class="card-header">Day of the week</div>
-                    <div class="card-body">
-                    <img src="#">
-                    <p class="card-text">temp</p>
-                    <p class="card-text">wind</p>
-                    <p class="card-text">humidity</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem;">
-                <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
-                    <div class="card-header">Day of the week</div>
-                    <div class="card-body">
-                    <img src="#">
-                    <p class="card-text">temp</p>
-                    <p class="card-text">wind</p>
-                    <p class="card-text">humidity</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem;">
-                <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
-                    <div class="card-header">Day of the week</div>
-                    <div class="card-body">
-                    <img src="#">
-                    <p class="card-text">temp</p>
-                    <p class="card-text">wind</p>
-                    <p class="card-text">humidity</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem;">
-                <div class="card text-bg-dark mb-3" style="max-width: 15rem;">
-                    <div class="card-header">Day of the week</div>
-                    <div class="card-body">
-                    <img src="#">
-                    <p class="card-text">temp</p>
-                    <p class="card-text">wind</p>
-                    <p class="card-text">humidity</p>
-                    </div>
-                </div>
-            </div>
-        </section>    
+    <article  class="card" >
+    <div id="cardContainer">
+
+    </div>
     </article>
-</body>
+</main>
 <footer>
-<div>
-    <a href="https://github.com/EvolanGIT" alt="Web Dev Logo">
-    <img class="img m-3" src="./assets/images/personalLogo.png" width="150px">
-    </a>
-</div>
+    <div>
+        <a href="https://github.com/EvolanGIT" alt="Web Dev Logo">
+            <img class="img m-3" src="./assets/images/personalLogo.png" width="150px">
+        </a>
+    </div>
 </footer>
+
+<!-- Script for Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./script.js"></script>
+</body>
 
 </html>

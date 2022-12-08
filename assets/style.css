@@ -1,9 +1,9 @@
 :root {
-    --monotone: rgb(104, 102, 97);
-    --linear: rgb(129, 110, 58);
-    --ivory:  rgb(212, 202, 163); 
+    --monotone: rgb(190, 200, 214);
+    --linear: rgb(85, 181, 236 );
+    --skyblue:  rgb(35, 56, 148); 
 }
-
+/* 85, 181, 236 */
 body {
     background-color: var(--monotone);
     
@@ -30,4 +30,12 @@ footer img {
     position:fixed;
     bottom:0;
     right:0;
+}
+
+header h1, h3 {
+    color: var(--skyblue);
+}
+
+#cardContainer {
+    padding: 200px;
 }
