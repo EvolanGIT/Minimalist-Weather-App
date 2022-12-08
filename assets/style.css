@@ -1,5 +1,5 @@
 :root {
-    --monotone: rgb(190, 200, 214);
+    --monotone: rgb(220, 227, 238);
     --linear: rgb(85, 181, 236 );
     --skyblue:  rgb(35, 56, 148); 
 }
@@ -17,17 +17,17 @@ body {
     background-color: var(--monotone);
 }
 
-.card {
+.containercard {
     background-color: var(--linear);
     
 }
 
+
 .card-text {
-    margin: 25px 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 footer img {
-    position:fixed;
     bottom:0;
     right:0;
 }
@@ -37,5 +37,7 @@ header h1, h3 {
 }
 
 #cardContainer {
-    padding: 200px;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
 }
