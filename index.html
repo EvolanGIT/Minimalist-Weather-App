@@ -14,29 +14,42 @@
     <nav class="navbar text-bg-dark navbar-expand-lg p-3">
         <h1 class="ps-3 text-decoration-underline">Weather Forecast</h1>
         <form class="d-flex ms-auto">
-            <a class="nav-link fs-3 px-2 me-2 border border-dark text-bg-secondary rounded-3 dropdown-toggle" href="#" id="inputSave" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Recent Searches
-            </a>
+            <div class="mydropdown">
+                <a class="nav-link dropdown-toggle fs-3 px-2 me-2 border border-dark text-bg-secondary rounded-3 " href="#" id="inputSave" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recent Searches
+                </a>
+                <ul class="dropdown-menu">
+                <!-- listed cities are generated here -->
+                    
+                </ul>
+            </div>
             <input class="form-control form-control-lg fw-bolder" id="inputName" type="search" placeholder="Search by City" aria-label="Search">
             <button id="pressSearch" class="btn btn-outline-dark text-bg-secondary my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
-    <header>
-        <h1 id="cityName" class="display-2 m-4 pb-1 text-center text-dark">Search for a city to Begin</h1>
+    <header >
+        <h1 id="cityName" class="display-2 fst-italic m-4 pb-1 text-center text-dark">Search for a city to Begin</h1>
+        <div id="firstInfo">
+<!-- this is where the information for the current day goes-->
+
+        </div>
     </header>
     <article>
-    <div id="cardContainer">
-        
+    <div id="cardContainer" class="container-fluid d-flex justify-content-between">
+<!-- the weather cards will appear here -->
+
     </div>
     </article>
 </main>
 <footer>
-    <div>
-        <a href="https://github.com/EvolanGIT" alt="Web Dev Logo">
-            <img class="img m-3" src="./assets/images/personalLogo.png" width="150px">
+    <div class="container-fluid d-flex justify-content-end align-bottom">
+        <p class="fs-4 fst-italic"><u>Proudly Presented by</u></p>
+        <a href="https://evolangit.github.io/YBDportfolio/" alt="Web Dev Logo">
+            <img class="img m-3" src="./assets/images/personalLogo.png" width="130px">
         </a>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <!-- Script for Jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

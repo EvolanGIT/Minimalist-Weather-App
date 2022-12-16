@@ -1,5 +1,5 @@
 :root {
-    --monotone: rgb(220, 227, 238);
+    --monotone: rgb(216, 222, 231);
     --linear: rgb(85, 181, 236 );
     --skyblue:  rgb(35, 56, 148); 
 }
@@ -27,10 +27,6 @@ body {
     margin: 20px 0 20px 0;
 }
 
-footer img {
-    bottom:0;
-    right:0;
-}
 
 header h1, h3 {
     color: var(--skyblue);
@@ -38,6 +34,13 @@ header h1, h3 {
 
 #cardContainer {
     padding: 100px;
-    display: flex;
-    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.d-flex {
+    align-items: flex-end;
+}
+
+.mydropdown {
+    position: relative;
 }
