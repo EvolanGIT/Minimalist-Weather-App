@@ -23,10 +23,18 @@ searchBtn.addEventListener('click', function(){
 
 // this function saves the city choice 
 function saveInput () {
-    let listedCity = ""
-    localStorage.setItem('search', citySearch);
-    for (let i =0; i<citySearch.length; i++) {
-        listedCity += `<li>${citySearch}</li>`
+    // saves the user input into local storage
+    localStorage.setItem('search', JSON.stringify(citySearch));
+    // retrieves the local storage items from the key 'search'
+    let citySave = JSON.parse(localStorage.getItem('search')); 
+    // empty array to push the local storage into
+    let cityList = ''
+    // pushes the values from 'search' into the empty array above
+    cityList.push(citySave);
+    // this loop creates the list item for each city name to be displayed.
+    let listedCity = ''
+    for (let i = 0; i < cityList.length; i++) {
+    listedCity += `<li>${cityList}</li>`
     }
     document.querySelector('.dropdown-menu').innerHTML = listedCity;
 }
