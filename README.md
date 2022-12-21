@@ -26,7 +26,7 @@
 ## Access
 
 - The link to my Github repository: https://github.com/EvolanGIT/Minimalist-Weather-App/
-- The launched website: 
+- The launched website: https://evolangit.github.io/Minimalist-Weather-App/
 
 
 ## Visuals
