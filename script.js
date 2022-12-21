@@ -11,8 +11,6 @@ let container = document.querySelector('#cardContainer');
 //this is the target for the current weather of the chosen city.
 let firstInfo = document.querySelector('#firstInfo');
 
-// saves the user's input and places it in local storage.
-let citySave = JSON.parse(localStorage.getItem('search'))||[];
 
 //this event listener pulls the information from the searchbox which is the city's name, and passes it to the first fetch.
 searchBtn.addEventListener('click', function(){
@@ -21,20 +19,22 @@ searchBtn.addEventListener('click', function(){
     citySearch = inputName.value;
     fetchCity(citySearch);
     nameTime(citySearch);
-    saveInput(citySearch);
+    let citySave = JSON.parse(localStorage.getItem('search'))||[];
+    citySave.push(citySearch);
+    localStorage.setItem('search', JSON.stringify(citySave));
+    saveInput();
 });
 
 // this function saves the city choice 
 function saveInput () {
-    citySave.push(citySearch);
-    localStorage.setItem('search', JSON.stringify(citySave));
-};
-    document.querySelector('.dropdown-menu').innerHTML = listedCity;
+    let citySave = JSON.parse(localStorage.getItem('search'))||[];
+    
     let listedCity = ''
-        for (let i = 0; i < citySave.length; i++) {
+    for (let i = 0; i < citySave.length; i++) {
         listedCity += `<li class="options bg-secondary border border-dark border-start-0 border-end-0 text-center fs-4">${citySave[i]}</li>`
-};
-
+    };
+    document.querySelector('.dropdown-menu').innerHTML = listedCity;
+}
 
 
 
@@ -144,4 +144,4 @@ function renderWeather(lat, lon) {
     })
 };
 
-
+saveInput();
