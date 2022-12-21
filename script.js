@@ -2,6 +2,8 @@
 let inputName = document.getElementById('inputName');
 //search button element
 let searchBtn = document.querySelector('#pressSearch');
+// this one is the query selector for the recent searches bar
+let recentSearch = document.querySelectorAll('.dropdown-menu');
 //city name in title
 let cityName = document.getElementById('cityName')
 //this is the target for the weather cards.
@@ -9,7 +11,8 @@ let container = document.querySelector('#cardContainer');
 //this is the target for the current weather of the chosen city.
 let firstInfo = document.querySelector('#firstInfo');
 
-
+// saves the user's input and places it in local storage.
+let citySave = JSON.parse(localStorage.getItem('search'))||[];
 
 //this event listener pulls the information from the searchbox which is the city's name, and passes it to the first fetch.
 searchBtn.addEventListener('click', function(){
@@ -18,33 +21,28 @@ searchBtn.addEventListener('click', function(){
     citySearch = inputName.value;
     fetchCity(citySearch);
     nameTime(citySearch);
-    saveInput(citySearch)
+    saveInput(citySearch);
 });
 
 // this function saves the city choice 
 function saveInput () {
-    // saves the user input into local storage
-    localStorage.setItem('search', JSON.stringify(citySearch));
-    // retrieves the local storage items from the key 'search'
-    let citySave = JSON.parse(localStorage.getItem('search')); 
-    // empty array to push the local storage into
-    let cityList = ''
-    // pushes the values from 'search' into the empty array above
-    cityList.push(citySave);
-    // this loop creates the list item for each city name to be displayed.
-    let listedCity = ''
-    for (let i = 0; i < cityList.length; i++) {
-    listedCity += `<li>${cityList}</li>`
-    }
+    citySave.push(citySearch);
+    localStorage.setItem('search', JSON.stringify(citySave));
+};
     document.querySelector('.dropdown-menu').innerHTML = listedCity;
-}
+    let listedCity = ''
+        for (let i = 0; i < citySave.length; i++) {
+        listedCity += `<li class="options bg-secondary border border-dark border-start-0 border-end-0 text-center fs-4">${citySave[i]}</li>`
+};
 
 
 
-//this function displays the name of the chosen city to the user.
+
+//this function displays the name of the chosen city to the user and makes it all caps.
 function nameTime () {
-    cityName.innerHTML = citySearch.toUpperCase();   
-}
+    cityName.innerHTML = citySearch.toUpperCase();
+    
+};
 
 //this fetch captures the city name and pulls the latitude and longitude to the second fetch.
 function fetchCity() {
