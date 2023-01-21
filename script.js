@@ -5,7 +5,7 @@ let searchBtn = document.querySelector('#pressSearch');
 // this one is the query selector for the recent searches bar
 let recentSearch = document.querySelectorAll('.dropdown-menu');
 //city name in title
-let cityName = document.getElementById('cityName')
+let cityName = document.getElementById('cityName');
 //this is the target for the weather cards.
 let container = document.querySelector('#cardContainer');
 //this is the target for the current weather of the chosen city.
@@ -25,17 +25,28 @@ searchBtn.addEventListener('click', function(){
     saveInput();
 });
 
-// this function saves the city choice 
+// this function saves the city choice in the dropdown menu.
 function saveInput () {
     let citySave = JSON.parse(localStorage.getItem('search'))||[];
-    
-    let listedCity = ''
+    document.querySelector('.dropdown-menu').innerHTML = " ";
     for (let i = 0; i < citySave.length; i++) {
-        listedCity += `<li class="options bg-secondary border border-dark border-start-0 border-end-0 text-center fs-4">${citySave[i]}</li>`
+        let li = document.createElement('li');
+        li.textContent = citySave[i];
+        li.classList.add("options");
+        li.addEventListener('click', function(e){
+        let city = e.target.innerText
+        fetchCity(city);
+        savedCity(city)
+    })     
+        document.querySelector('.dropdown-menu').append(li);
     };
-    document.querySelector('.dropdown-menu').innerHTML = listedCity;
 }
 
+
+// this function displays the name of the chosen city through the drop-down menu.
+function savedCity (city) {
+    cityName.innerHTML = city.toUpperCase();
+}
 
 
 //this function displays the name of the chosen city to the user and makes it all caps.
@@ -45,7 +56,7 @@ function nameTime () {
 };
 
 //this fetch captures the city name and pulls the latitude and longitude to the second fetch.
-function fetchCity() {
+function fetchCity(citySearch) {
     var cityData = 'https://api.openweathermap.org/data/2.5/forecast?q=' + citySearch + '&units=imperial&appid=22512877ada2a919ebc827b52e0ed0a5' 
     console.log(cityData);
     let contentHTML = ''
